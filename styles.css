@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  font-family: "Neue Montreal";
+  height: 100%;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  width: 50%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 2em;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  z-index: 10000;
+}
+
+.header {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 2;
+}
+
+.letters {
+  flex: 1;
+  display: flex;
+  text-transform: uppercase;
+}
+
+.letters > div {
+  flex: 1;
+  font-size: 18vw;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
+.website-content {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.img-holder {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+  transform: rotate(30deg);
+}
+
+.img-holder img {
+  position: relative;
+  transform: scale(2);
+}
+
+.container-holder {
+  position: relative;
+  top: -5%;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+}
+
+.row {
+  margin: 2em 1em;
+}
+
+.img {
+  width: 200px;
+  height: 275px;
+}
+
+.row:nth-child(2) .img {
+  position: relative;
+  left: 50%;
+}
+
+.row:nth-child(3) .img {
+  position: relative;
+  left: 15%;
+}
+
+.row:nth-child(4) .img {
+  position: relative;
+  left: 70%;
+}
+
+.row:nth-child(6) p {
+  position: relative;
+  left: 50%;
+  margin: 4em o;
+}
+
+@media (max-width: 600px) {
+  body,
+  html {
+    overflow-x: hidden; /* Mencegah scrolling vertikal */
+  }
+
+  .logo {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 30px;
+    height: 30px;
+    z-index: 1000;
+  }
+
+  .header {
+    top: 10%; /* Ubah top menjadi 10% agar header tidak terlalu tenggelam dan lebih ke atas */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em; /* Tambahkan margin-bottom agar jarak antara .letters dan .img-holder lebih besar */
+  }
+
+  .letters {
+    margin-bottom: 1em; /* Tambahkan margin-bottom agar jarak antara .letters lebih besar */
+  }
+
+  .letters > div {
+    font-size: 6vw; /* Ubah ukuran huruf menjadi lebih kecil */
+    margin-top: 0.5em; /* Tambahkan margin-top agar .letters > div lebih ke atas */
+  }
+
+  h1 {
+    font-size: 20px; /* Ukuran huruf yang lebih kecil */
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  p {
+    font-size: 12px;
+    width: 90%;
+    margin: 0 auto 1em;
+    margin-right: 10rem;
+  }
+
+  .img-holder {
+    height: 30vh; /* Ukuran gambar yang lebih kecil */
+  }
+
+  .container-holder {
+    padding: 0.5em;
+  }
+
+  .row {
+    margin: 1em 0;
+  }
+
+  .row img {
+    width: 100%; /* Pastikan gambar selalu mengisi lebar parent */
+    height: auto; /* Biarkan tinggi gambar menyesuaikan agar proporsional */
+  }
+}
